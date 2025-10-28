@@ -4,7 +4,7 @@ import { assets, cityList } from '../assets/assets'
 const Hero = () => {
     const [pickupLocation, setPickupLocation] = useState('')
     return (
-        <div className='h-screen flex flex-col items-center justify-center gap-14 bg-light text-center'>
+        <div className='h-screen flex flex-col items-center justify-center gap-8 bg-light text-center'>
             <h1 className='text-4xl md:text-5xl font-semibold'>
                 Cars on Rent
             </h1>
@@ -29,7 +29,7 @@ const Hero = () => {
                     </div>
                     <div className='flex flex-col items-start gap-2'>
                         <label htmlFor="return-date">Return Date</label>
-                        <input type="date" id='return-date' className='text-sm text-gray-500' required />
+                        <input type="date" id='return-date' min={new Date().toISOString().split('T')[0]} className='text-sm text-gray-500' required />
                     </div>
 
                 </div>
