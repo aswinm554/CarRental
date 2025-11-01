@@ -10,6 +10,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setCars } from './redux/carsSlice';
 import SigninSignup from './components/SigninSignup';
 import MyBookings from "./pages/MyBookings";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from './pages/AdminDshboard';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -17,6 +19,10 @@ const App = () => {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.cars.cars);
 
+
+   const hideNavbarAndFooter =
+  location.pathname.startsWith("/owner") ||
+    location.pathname.startsWith("/admin-dashboard");
   useEffect(() => {
     console.log("Cars in Redux:", cars);
     if (cars.length === 0) {
@@ -26,23 +32,24 @@ const App = () => {
         .catch((err) => console.error('Error fetching cars:', err));
     }
   }, [dispatch]);
-  
+
 
   return (
     <>
-      {!isOwnerPath && <Navbar />}
+      {!hideNavbarAndFooter && <Navbar />}
 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/car-details/:id' element={<CarDetails />} />
         <Route path='/cars' element={<Cars />} />
-        <Route path='/bookings' element={<Bookings />} />
         <Route path="/signin" element={<SigninSignup />} />
-          <Route path="/mybookings" element={<MyBookings />} />
+        <Route path="/mybookings" element={<MyBookings />} />
+        <Route path="/owner" element={<AdminLogin />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
       </Routes>
 
-      {!isOwnerPath && <Footer />}
-    </>
+{!hideNavbarAndFooter && <Footer />}    </>
   );
 };
 
