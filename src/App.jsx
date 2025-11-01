@@ -26,6 +26,7 @@ const App = () => {
         .catch((err) => console.error('Error fetching cars:', err));
     }
   }, [dispatch]);
+  
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Sun, Moon } from "lucide-react"; // Lucide icons
+import { Sun, Moon } from "lucide-react";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(

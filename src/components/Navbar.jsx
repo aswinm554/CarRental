@@ -13,7 +13,7 @@ const Navbar = ({ setShowLogin }) => {
     JSON.parse(localStorage.getItem("loggedInUser"))
   );
 
-  // ✅ Handle user login status changes
+
   useEffect(() => {
     const handleStorageChange = () => {
       const user = JSON.parse(localStorage.getItem("loggedInUser"));
@@ -23,7 +23,7 @@ const Navbar = ({ setShowLogin }) => {
     return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
-  // ✅ Close dropdown when clicking outside
+
   useEffect(() => {
     const handleClickOutside = () => setShowMenu(false);
     window.addEventListener("click", handleClickOutside);
@@ -41,9 +41,8 @@ const Navbar = ({ setShowLogin }) => {
 
   return (
     <div
-      className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 text-gray-600 border-b border-borderColor relative transition-all ${
-        location.pathname === "/" ? "bg-light" : "bg-white"
-      }`}
+      className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 text-gray-600 border-b border-borderColor relative transition-all ${location.pathname === "/" ? "bg-light" : "bg-white"
+        }`}
     >
       <Link to={"/"}>
         <h1
@@ -55,9 +54,8 @@ const Navbar = ({ setShowLogin }) => {
       </Link>
 
       <div
-        className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16 max-sm:border-t border-borderColor right-0 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all duration-300 z-50 ${
-          location.pathname === "/" ? "bg-light" : "bg-white"
-        } ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}
+        className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16 max-sm:border-t border-borderColor right-0 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all duration-300 z-50 ${location.pathname === "/" ? "bg-light" : "bg-white"
+          } ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}
       >
         {menuLinks.map((link, index) => (
           <Link key={index} to={link.path}>
@@ -86,10 +84,12 @@ const Navbar = ({ setShowLogin }) => {
           {!isSignInPage && (
             loggedInUser ? (
               <div className="flex items-center gap-4 relative">
-                <span className="font-medium">{loggedInUser.username}</span>
+                <span className="font-medium"></span>
                 <div className="relative">
                   <img
-                    src="/default-profile.png"
+                    src={assets.user_iconn
+
+                    }
                     alt="Profile"
                     className="w-8 h-8 rounded-full cursor-pointer"
                     onClick={(e) => {
@@ -100,11 +100,12 @@ const Navbar = ({ setShowLogin }) => {
 
                   {showMenu && (
                     <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 z-50">
+
                       <button
-                        onClick={() => navigate("/profile")}
-                        className="w-full text-left px-4 py-2 hover:bg-gray-100"
+
+                        className="w-full text-left px-4 py-2 hover:bg-gray-100 text-gray-500"
                       >
-                        View Profile
+                        {loggedInUser.username}
                       </button>
                       <button
                         onClick={handleLogout}
@@ -112,6 +113,7 @@ const Navbar = ({ setShowLogin }) => {
                       >
                         Logout
                       </button>
+
                     </div>
                   )}
                 </div>
