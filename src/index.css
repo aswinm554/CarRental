@@ -13,3 +13,22 @@
     
  
 }
+:root {
+  --bg-color: #ffffff;
+  --text-color: #080808;
+  --border-color: #c4c7d2;
+  --primary-color: #0284c4;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;       /* Dark navy */
+  --text-color: #eceeef;     /* Light gray text */
+  --border-color: #334155;   /* Softer border */
+  --primary-color: #38bdf8;  /* Lighter blue for dark bg */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}

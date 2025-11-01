@@ -19,7 +19,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                    <h2 className='text-base font-medium text-gray-800 uppercase'>Quick Links</h2>
+                    <h2 className='text-base font-medium text-gray-500 uppercase'>Quick Links</h2>
                     <ul className='mt-3 flex flex-col gap-1.5'>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Browse Cars</a></li>
@@ -28,7 +28,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div>
-                    <h2 className='text-base font-medium text-gray-800 uppercase'>Resources</h2>
+                    <h2 className='text-base font-medium text-gray-500 uppercase'>Resources</h2>
                     <ul className='mt-3 flex flex-col gap-1.5'>
                         <li><a href="#">Help Center</a></li>
                         <li><a href="#">Terms & Conditions</a></li>
@@ -37,7 +37,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div>
-                    <h2 className='text-base font-medium text-gray-800 uppercase'>Contact</h2>
+                    <h2 className='text-base font-medium text-gray-500 uppercase'>Contact</h2>
                     <ul className='mt-3 flex flex-col gap-1.5'>
                         <li>AM Tower, Car Rental</li>
                         <li>Edappally, Ernakulam</li>

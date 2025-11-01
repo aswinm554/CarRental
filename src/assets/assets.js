@@ -41,7 +41,7 @@ import car_image2 from "./car_image2.png"
 import car_image3 from "./car_image3.png"
 import car_image4 from "./car_image4.png"
 
-export const cityList = ['Eranakulam', 'Trivandrum', 'Kozhikkode', 'Trissur', 'Alappuzha', 'Kannur'  ]  
+export const cityList =  ['Indore', 'Kozhikode', 'Visakhapatnam', 'Bhopal', 'Kolkata', 'Mysore', 'Chandigarh', 'Jaipur', 'Surat', 'Lucknow', 'Ahmedabad', 'Nagpur', 'Kochi', 'Chennai', 'Delhi', 'Goa', 'Hyderabad', 'Pune', 'Bengaluru', 'Mumbai'  ]  
 
 export const assets = {
     logo,
@@ -91,8 +91,8 @@ export const assets = {
 export const menuLinks = [
     { name: "Home", path: "/" },
     { name: "Cars", path: "/cars" },
-    { name: "My Bookings", path: "/my-bookings" },
-     { name: "Dark/Light", path: "/themetogle" },
+    { name: "My Bookings", path: "/mybookings" },
+    
 ]
 
 export const ownerMenuLinks = [
